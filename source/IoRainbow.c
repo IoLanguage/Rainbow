@@ -53,8 +53,9 @@ void IoRainbow_free(IoRainbow *self)
 }
 
 /*doc Rainbow setByCode(Sequence)
-  Set color with raw code. For example:
-  ```Io
+Set color with raw code. For example:
+
+```Io
 # to make bold font
 Rainbow setByCode("1")
 
