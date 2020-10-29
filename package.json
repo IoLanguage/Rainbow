@@ -1,0 +1,15 @@
+{
+  "name":         "Rainbow",
+  "version":      "0.1.0",
+  "description":  "Colorize command line output.",
+  "author":       "Ales Tsurko",
+  "website":      "https://iolanguage.com",
+  "readme":       "README.md",
+  "protos":       ["Rainbow"],
+  "dependencies": {
+    "libs":     [],
+    "headers":  [],
+    "protos":   [],
+    "packages": []
+  }
+}
