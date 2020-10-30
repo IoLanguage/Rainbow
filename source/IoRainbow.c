@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 #include "IoState.h"
 #include "IoSeq.h"
 
@@ -52,7 +54,7 @@ void IoRainbow_free(IoRainbow *self)
 { 
 }
 
-/*doc Rainbow setByCode(Sequence)
+/*doc Rainbow setByCode(Sequence[, bool])
 Set color with raw code. For example:
 
 ```Io
@@ -66,6 +68,9 @@ Rainbow setByCode("31")
 Rainbow setByCode("0")
 ```
 
+The second argument is optional boolean. If it's set to `true` the code changes
+stderr instead of stdout.
+
 See here for all available codes:
 https://en.wikipedia.org/wiki/ANSI_escape_code#SGR_parameters
 
@@ -73,6 +78,14 @@ https://en.wikipedia.org/wiki/ANSI_escape_code#SGR_parameters
 IoRainbow *IoRainbow_setByCode(IoRainbow *self, IoObject *locals, IoMessage *m)
 {
     IoSeq *input = IoMessage_locals_cStringArgAt_(m, locals, 0);
-    printf("\033[%sm", input);
+    int isStdErr = IoMessage_locals_boolArgAt_(m, locals, 1);
+
+    if (isStdErr) {
+        printf("im here");
+        fprintf(stderr, "\033[%sm", input);
+    } else {
+        frpintf(stdout, "\033[%sm", input);
+    }
+
     return self;
 }
