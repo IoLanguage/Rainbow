@@ -81,7 +81,6 @@ IoRainbow *IoRainbow_setByCode(IoRainbow *self, IoObject *locals, IoMessage *m)
     int isStdErr = IoMessage_locals_boolArgAt_(m, locals, 1);
 
     if (isStdErr) {
-        printf("im here");
         fprintf(stderr, "\033[%sm", input);
     } else {
         fprintf(stdout, "\033[%sm", input);
