@@ -84,7 +84,7 @@ IoRainbow *IoRainbow_setByCode(IoRainbow *self, IoObject *locals, IoMessage *m)
         printf("im here");
         fprintf(stderr, "\033[%sm", input);
     } else {
-        frpintf(stdout, "\033[%sm", input);
+        fprintf(stdout, "\033[%sm", input);
     }
 
     return self;
