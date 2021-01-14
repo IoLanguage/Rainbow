@@ -1,0 +1,9 @@
+{
+    "name": "Rainbow",
+    "version": "0.1.0",
+    "description": "Colorize command line output.",
+    "author": "Ales Tsurko",
+    "website": "https://iolanguage.com",
+    "readme": "README.md",
+    "url": "https://github.com/IoLanguage/Rainbow.git"
+}
