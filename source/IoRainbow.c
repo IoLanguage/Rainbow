@@ -25,7 +25,7 @@ IoRainbow *IoRainbow_proto(void *state)
     IoObject *self = IoObject_new(state);
     IoObject_tag_(self, IoRainbow_newTag(state));
 
-    IoState_registerProtoWithFunc_(state, self, IoRainbow_proto);
+    IoState_registerProtoWithId_(state, self, protoId);
 
     {
         IoMethodTable methodTable[] = {
